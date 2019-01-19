@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int n;
+        boolean isPrime;
+        int num=in.nextInt();
+        while(num-->0){
+            n=in.nextInt();
+            isPrime=isPrimeNum(n);
+            if (isPrime==false)
+                System.out.println("Not prime");
+            else
+                System.out.println("Prime");
+        }
+    }
+
+    public static boolean isPrimeNum(int n){
+        boolean isPrime= true;
+        double k = Math.sqrt(n);
+        if (n==1)
+            return false;
+
+        else if(n==2 || n==3 || n==5)
+            return true;
+        
+        for (int i= 2; i<=k; i++){
+            if(n%i==0){
+                isPrime=false;
+            }
+        }
+        return isPrime;
+    }
+}
+
